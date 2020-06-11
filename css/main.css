@@ -1,0 +1,676 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: monster;
+    src: url(/fonts/Montserrat-Regular.ttf)
+}
+
+html {
+    font-family: monster;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.main-header {
+    width: 100%;
+    height: 66px;
+    background-color: #ff7f00;
+}
+
+.logo {
+    cursor: pointer;
+    color: white;
+}
+
+.hamburger {
+    height: 50px;
+    width: 50px;
+    font-size: 40px;
+    border: none;
+    background-color: #ff7f00;
+    color: white;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.under-line {
+    border-bottom: 1px solid black;
+}
+
+.main-nav {
+    font-family: monster;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.clean-list {
+    list-style-type: none;
+}
+
+.nav-bar li a {
+    color: white;
+    padding: 16px 15px;
+}
+
+.sec-btn {
+    border-left: #8a8a8a solid 1px;
+}
+
+.last-btn {
+    border-left: #8a8a8a solid 1px;
+}
+
+.nav-bar li a:hover {
+    color: #040a2c;
+    box-shadow: inset 0 -6px 0 black;
+}
+
+.search-bar {
+    background-color: white;
+    margin: 0 auto;
+}
+
+.sec-nav {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sec-nav li {
+    color: #040a2c;
+}
+
+.sec-nav li:hover {
+    color: blue;
+}
+
+.bottom-line {
+    border-bottom: 2px solid #040a2c;
+}
+
+input {
+    font-family: monster;
+    border: none;
+    outline: 0;
+    font-size: 19px;
+    width: 223px;
+    padding: 0;
+}
+
+.sec-nav-bar {
+    margin: 0;
+    padding: 0;
+}
+
+.search-keyword {
+    border: none;
+    outline: 0;
+    background-color: white;
+    padding: 0;
+}
+
+.img {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.sec-nav-btn {
+    padding: 30px 15px
+}
+
+.funny {
+    font-size: 19px;
+}
+
+.comics {
+    font-size: 40px;
+}
+
+.dogs {
+    font-size: 24px;
+}
+
+.drinks {
+    font-size: 30px;
+}
+
+.books {
+    font-size: 48px;
+}
+
+.main-container {
+    background-color: #e3e3e3;
+}
+
+.cards-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* grid-template-rows: repeat(3, 280px); */
+    padding: 25px 0;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+.card {
+    cursor: pointer;
+    height: 278px;
+    background-color: teal;
+}
+
+.info-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.alina {
+    margin-top: 75px;
+    margin-right: 40px;
+    margin-bottom: 170px;
+    margin-left: 107px;
+    border-radius: 50%;
+}
+
+.alina-text {
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.gen-info {
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.li {
+    width: 39px;
+    height: 39px;
+    cursor: pointer;
+    margin-left: 8px;
+    border-radius: 12px;
+    background-color: #ff7f00;
+}
+
+i {
+    font-size: 25px;
+}
+
+.github {
+    padding-left: 8px;
+    padding-top: 8px;
+}
+
+.facebook {
+    padding-left: 11px;
+    padding-top: 7px;
+}
+
+.linkedin {
+    padding-left: 8px;
+    padding-top: 8px;
+}
+
+.icon {
+    color: white;
+}
+
+.footer {
+    background-color: #ff7f00;
+    width: 100%;
+    height: 207px;
+    flex-direction: column;
+}
+
+.footer-title {
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.footer-p {
+    color: white;
+    margin: 0;
+}
+
+@media (max-width:1150px) {
+    .sec-nav {
+        flex-direction: column;
+        margin-top: 12px;
+    }
+    .main-header {
+        width: 100%;
+    }
+    .sec-nav {
+        max-width: 520px;
+    }
+    .sec-nav-btn {
+        padding: 15px 15px
+    }
+    .main-nav {
+        max-width: 520px;
+    }
+    .card-container {
+        max-width: 520px;
+    }
+    .remove {
+        padding: 0;
+        display: none;
+    }
+    .info-container {
+        flex-direction: column;
+    }
+    .info-pic {
+        margin: 0 auto;
+    }
+    .alina {
+        width: 157px;
+        height: 157px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .alina-text {
+        margin-bottom: 10px;
+    }
+    .alina-text::after {
+        content: '(1997-2004). Created by David Crane and Marta Kauffman';
+    }
+    .gen-info {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .h3 {
+        color: #ff7f00;
+    }
+    .icon {
+        padding: 0;
+        width: 150px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+    .facebook {
+        padding-left: 0;
+    }
+    .github {
+        padding-left: 0;
+    }
+    .linkedin {
+        padding-left: 0;
+    }
+    .cards-container {
+        max-width: 520px;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 250px);
+        grid-row-gap: 4px;
+        grid-column-gap: 4px;
+    }
+}
+
+@media (max-width:520px) {
+    .cards-container {
+        max-width: 330px;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 160px);
+        grid-row-gap: 4px;
+        grid-column-gap: 4px;
+    }
+    .sec-nav {
+        max-width: 330px;
+        z-index: -1;
+    }
+    .card {
+        height: 160px;
+    }
+    .comics {
+        font-size: 30px;
+    }
+    .funny {
+        font-size: 15px;
+    }
+    .dogs {
+        font-size: 23px;
+    }
+    .more {
+        font-size: 16px;
+    }
+    .sec-nav-btn {
+        padding: 20px 11px 17px 11px;
+    }
+    .hamburger {
+        visibility: visible;
+        z-index: 3;
+    }
+    .cards-container>*:last-child {
+        display: none;
+        visibility: hidden;
+    }
+    .main-nav {
+        max-width: 330px;
+        z-index: 3;
+    }
+    .logo {
+        z-index: 3;
+    }
+    .nav-bar-container {
+        max-width: 330px;
+        /* text-align: left; */
+    }
+    .nav-bar {
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ff7f00;
+        padding: 0;
+        transform: translateY(0);
+        transition: transform 0.5s;
+        z-index: 0;
+    }
+    .menu-open .nav-bar {
+        z-index: 1;
+        transform: translateY(40px);
+    }
+    .nav-bar li a {
+        transition: color .2s ease;
+        color: transparent;
+        padding: 0;
+    }
+    .menu-open .nav-bar li a {
+        color: white;
+    }
+    .menu-open .nav-bar li a:hover {
+        color: black;
+        box-shadow: none;
+    }
+    .nav-bar li {
+        padding: 5px;
+        border: none;
+    }
+    /* .info-container {
+        flex-direction: column;
+    } */
+    /* .alina {
+        width: 157px;
+        height: 157px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        margin-left: 100px;
+    }
+    .alina-text {
+        margin-bottom: 10px;
+    }
+    .alina-text::after {
+        content: '(1997-2004). Created by David Crane and Marta Kauffman';
+    }
+    .gen-info {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .h3 {
+        color: #ff7f00;
+    }
+    .icon {
+        padding: 0;
+        margin-left: 100px;
+        margin-bottom: 60px;
+    }
+    .facebook {
+        padding-left: 0;
+    }
+    .github {
+        padding-left: 0;
+    }
+    .linkedin {
+        padding-left: 0;
+    } */
+}
+
+.editor-container {
+    background-color: #e3e3e3;
+    height: 100%;
+    width: 100%;
+}
+
+.main-container-editor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.meme-canvas {
+    margin: 25px 0;
+    background-color: thistle;
+}
+
+.btn {
+    /* width: 60px;
+    height: 60px; */
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.meme-btns {
+    margin-left: 28px;
+}
+
+.meme-functions {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(17, 30px);
+    grid-row-gap: 5px;
+    grid-column-gap: 18px;
+}
+
+.meme-input {
+    width: 373px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    grid-column: 1/-1;
+    grid-row: 1/3;
+}
+
+.txt-up {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 3/5;
+}
+
+.txt-down {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 3/5;
+}
+
+.up-down {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 3/5;
+}
+
+.add {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row: 3/5;
+}
+
+.remove {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row: 3/5;
+}
+
+.A-plus {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+.A-minus {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+.rtl {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+.ltr {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+.btu {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+.select {
+    width: 218px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 8;
+    grid-row-end: 10;
+}
+
+.A-font {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 8;
+    grid-row-end: 10;
+}
+
+.paint {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 8;
+    grid-row-end: 10;
+}
+
+.costumes {
+    width: 373px;
+    /* height: 135px; */
+    border-radius: 12px;
+    background-color: #ffffff;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 11;
+    grid-row-end: 14;
+}
+
+.costume-acc {
+    cursor: pointer;
+}
+
+.share {
+    border: none;
+    font-family: monster;
+    width: 120px;
+    height: 60px;
+    color: white;
+    border-radius: 12px;
+    background-color: #ff7f00;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 15;
+    grid-row-end: 17;
+    cursor: pointer;
+}
+
+.download {
+    cursor: pointer;
+    border: none;
+    font-family: monster;
+    width: 120px;
+    height: 60px;
+    color: white;
+    border-radius: 12px;
+    background-color: #ff7f00;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 15;
+    grid-row-end: 17;
+}
+
+@media(max-width:500px) {
+    .main-container {
+        flex-direction: column;
+    }
+}
+
+.saved-memes {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e3e3e3;
+    color: #040a2c;
+}
+
+.saved-memes p {
+    margin: 0;
+    text-align: center;
+    padding-top: 300px;
+}
+
+.saved-memes-imgs {
+    margin: 0 auto;
+    max-width: 1100px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+}
+
+.loaded-meme {
+    width: 100%;
+}

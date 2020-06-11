@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint2</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+    <header class="main-header">
+        <div class="main-nav flex space-between">
+            <h1 onclick="onLogoClick()" class="logo">
+                <img src="/LOGO/logo-icon.png" alt="meme icon">
+            </h1>
+            <div class="nav-bar-container items-center flex">
+                <div onclick="toggleMenu()" class="hamburger">☰</div>
+                <ul class="nav-bar flex clean-list">
+                    <li class="nav-btn">
+                        <a onclick="onOpenSavedMemes()" class="nav-src" href="#">Memes</a>
+                    </li>
+                    <li class="nav-btn sec-btn">
+                        <a onclick="onLogoClick()" class="nav-src" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-btn last-btn">
+                        <a class="nav-src" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="gallery">
+        <section class="search-bar">
+            <div class="sec-nav flex items-center space-between">
+                <div class="bottom-line">
+                    <input class="input" type="search" oninput="onSearchKeyword()" placeholder="Enter search keyword">
+                    <button class="search-keyword" type="submit" onclick="onSearchKeyword()"> 
+                <img class="img" src="/meme-imgs (square)/search-icon.png.png" alt="search img">
+          </button>
+                </div>
+                <div class="sec-nav-bar-container">
+                    <ul class="sec-nav-bar flex items-center clean-list">
+                        <li class="sec-nav-btn">
+                            <a class="funny" href="#">funny</a>
+                        </li>
+                        <li class="sec-nav-btn">
+                            <a class="comics" href="#">comics</a>
+                        </li>
+                        <li class="sec-nav-btn">
+                            <a class="dogs" href="#">dogs</a>
+                        </li>
+                        <li class="sec-nav-btn remove">
+                            <a class="drinks" href="#">drinks</a>
+                        </li>
+                        <li class="sec-nav-btn remove">
+                            <a class="books" href="#">books</a>
+                        </li>
+                        <li class="sec-nav-btn">
+                            <a class="under-line more" href="#">more...</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-container">
+            <div class="cards-container grid">
+            </div>
+        </section>
+        <div class="info-container flex">
+            <div class="info-pic">
+                <img class="alina" src="/LOGO/alina-kovalchuk-Cd7dYdJKIKk-unsplash.png" alt="">
+            </div>
+            <div class="gen-info">
+                <h3 class="h3">Nice alina</h3>
+                <p class="alina-text">is a fictional character,one of the six main characters who appears on the American sitcon Friends
+                </p>
+                <div>
+                    <ul class="flex icon clean-list">
+                        <li class="li">
+                            <i class="fab fa-linkedin-in linkedin"></i>
+                        </li>
+                        <li class="li">
+                            <i class="fab fa-facebook-f facebook"></i>
+                        </li>
+                        <li class="li">
+                            <i class="fab fa-github github"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="editor-container" hidden>
+        <section class="main-container-editor flex space-between items-center">
+            <canvas id="my-canvas" height="650" width="650" onclick="canvasClicked(event)" onmousedown=" onMouseDown(event)" onmouseup=" onMouseUp(event)" onmousemove="onMouseMove(event)"></canvas>
+            <section class="meme-btns">
+                <div class="meme-functions grid">
+                    <input oninput="onChangeTxt()" class="meme-input" type="text" placeholder="Write your text here">
+                    <button onfocus="onSwitchInput()" class="up-down btn">
+                   <img src="/icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
+               </button>
+                    <button onclick="onTextPosition(-5)" class="txt-up btn">
+                        <i class="fas fa-arrow-up"></i>
+               </button>
+                    <button onclick="onTextPosition(5)" class="txt-down btn">
+                        <i class="fas fa-arrow-down"></i>
+               </button>
+                    <button onclick="onAddLine()" class="add btn">
+                   <img src="/icons/add.png" alt="">
+               </button>
+                    <button class="remove btn">
+                   <img src="/icons/trash.png" alt="">
+               </button>
+                    <button onclick="onIncreaseDecrease(10)" class="A-plus btn">
+                <img src="/icons/A+.png" alt="">
+             </button>
+                    </button>
+                    <button onclick="onIncreaseDecrease(-10)" class="A-minus btn">
+                <img src="/icons/A-.png" alt="">
+             </button>
+                    </button>
+                    <button class="rtl btn">
+                <img src="/icons/align-to-left.png" alt="">
+             </button>
+                    </button>
+                    <button class="btu btn">
+                        <img src="/icons/center-text-alignment.png" alt="">
+                    </button>
+                    <button class="ltr btn">
+                            <img src="/icons/align-to-right.png" alt="">
+                         </button>
+                    <select class="select" name="name" id="word">
+                <option value="itamar">itamar</option>
+                <option value="didi">didi</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+                    <button class="A-font btn">
+                <img src="/icons/A.png" alt="">
+             </button>
+                    <button class="paint btn">
+                <img src="/icons/paint-board-and-brush.png" alt="">
+             </button>
+                    <section class="costumes flex space-between items-center">
+                        <div class="costume-acc">
+                            <img src="/icons/left-arrow-costumes.jpg" alt="">
+                        </div>
+                        <div onclick="onUseCostume()" class="costume-acc">
+                            <img onclick="onUseCostume()" class="costume-type" src="/icons/present.jpg" alt="">
+                        </div>
+                        <div onclick="onUseCostume()" class=" costume-acc ">
+                            <img class="costume-type" src="/icons//nice-hat.png " alt=" ">
+                        </div>
+                        <div onclick="onUseCostume()" class="costume-acc">
+                            <img class="costume-type" src="/icons/glasses.jpg" alt="">
+                        </div>
+                        <div class=" costume-acc ">
+                            <img src="/icons/right-arrow-costumes.jpg " alt=" ">
+                        </div>
+                    </section>
+
+                    <button onclick="onSaveMeme() " class="save-meme ">Save</button>
+                    <button class="download ">Download</button>
+                    <button class="share ">Share</button>
+                </div>
+            </section>
+        </section>
+    </div>
+    <div class="saved-memes " hidden>
+        <section class="saved-memes-imgs grid "></section>
+        <p class="saved-memes-p ">
+
+        </p>
+    </div>
+    <footer class="footer flex items-center ">
+        <h4 class="footer-title ">
+            <img src="/LOGO/logo-icon.png " alt="meme icon ">
+        </h4>
+        <p class=" ">all rights reserved 2019</p>
+    </footer>
+
+
+
+    <!-- <canvas id="myCanvas ">
+        <img id="trump " src="meme-imgs (square)/1.jpg " >
+
+    </canvas> -->
+    <script src="https://kit.fontawesome.com/220e9ec581.js " crossorigin="anonymous "></script>
+    <script src="js/storage-service.js "></script>
+    <script src="js/gallery-service.js "></script>
+    <script src="js/gallery-controller.js "></script>
+    <script src="js/meme-service.js "></script>
+    <script src="js/meme-controller.js "></script>
+</body>
+
+</html>
