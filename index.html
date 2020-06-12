@@ -99,7 +99,7 @@
                 <div class="meme-functions grid">
                     <input oninput="onChangeTxt()" class="meme-input" type="text" placeholder="Write your text here">
                     <button onfocus="onSwitchInput()" class="up-down btn">
-                   <img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
+                   <img class="btn-pic" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
                </button>
                     <button onclick="onTextPosition(-5)" class="txt-up btn">
                         <i class="fas fa-arrow-up"></i>
@@ -108,28 +108,28 @@
                         <i class="fas fa-arrow-down"></i>
                </button>
                     <button onclick="onAddLine()" class="add btn">
-                   <img src="icons/add.png" alt="">
+                   <img class="btn-pic" src="icons/add.png" alt="">
                </button>
-                    <button class="remove btn">
-                   <img src="icons/trash.png" alt="">
+                    <button class="trash btn">
+                   <img class="btn-pic" src="icons/trash.png" alt="">
                </button>
                     <button onclick="onIncreaseDecrease(10)" class="A-plus btn">
-                <img src="icons/A+.png" alt="">
+                <img class="btn-pic" src="icons/A+.png" alt="">
              </button>
                     </button>
                     <button onclick="onIncreaseDecrease(-10)" class="A-minus btn">
-                <img src="icons/A-.png" alt="">
+                <img class="btn-pic" src="icons/A-.png" alt="">
              </button>
                     </button>
                     <button class="rtl btn">
-                <img src="icons/align-to-left.png" alt="">
+                <img class="btn-pic" src="icons/align-to-left.png" alt="">
              </button>
                     </button>
                     <button class="btu btn">
-                        <img src="icons/center-text-alignment.png" alt="">
+                        <img class="btn-pic" src="icons/center-text-alignment.png" alt="">
                     </button>
                     <button class="ltr btn">
-                            <img src="icons/align-to-right.png" alt="">
+                            <img class="btn-pic" src="icons/align-to-right.png" alt="">
                          </button>
                     <select class="select" name="name" id="word">
                 <option value="itamar">itamar</option>
@@ -138,17 +138,18 @@
                 <option value="audi">Audi</option>
               </select>
                     <button class="A-font btn">
-                <img src="icons/A.png" alt="">
+                <img class="btn-pic" src="icons/A.png" alt="">
              </button>
                     <button class="paint btn">
-                <img src="icons/paint-board-and-brush.png" alt="">
-             </button>
+                        <!-- <input type="color" src="icons/paint-board-and-brush.png"> -->
+                <img class="btn-pic" src="icons/paint-board-and-brush.png" alt="">
+            </button>
                     <section class="costumes flex space-between items-center">
                         <div class="costume-acc">
                             <img src="icons/left-arrow-costumes.jpg" alt="">
                         </div>
                         <div onclick="onUseCostume()" class="costume-acc">
-                            <img onclick="onUseCostume()" class="costume-type" src="/icons/present.jpg" alt="">
+                            <img onclick="onUseCostume()" class="costume-type" src="icons/present.jpg" alt="">
                         </div>
                         <div onclick="onUseCostume()" class=" costume-acc ">
                             <img class="costume-type" src="icons//nice-hat.png " alt=" ">
@@ -156,12 +157,15 @@
                         <div onclick="onUseCostume()" class="costume-acc">
                             <img class="costume-type" src="icons/glasses.jpg" alt="">
                         </div>
+                        <div onclick="onUseCostume()" class="costume-acc">
+                            <img class="mostache costume-type" src="icons/mostache.jpg" alt="">
+                        </div>
                         <div class=" costume-acc ">
                             <img src="icons/right-arrow-costumes.jpg " alt=" ">
                         </div>
                     </section>
 
-                    <button onclick="onSaveMeme() " class="save-meme ">Save</button>
+                    <button onclick="onSaveMeme() " class="save-meme">Save</button>
                     <button class="download ">Download</button>
                     <button class="share ">Share</button>
                 </div>

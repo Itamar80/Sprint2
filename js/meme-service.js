@@ -11,7 +11,7 @@ var gMeme = {
         txt: 'Write your text here',
         size: 40,
         align: 'left',
-        color: 'red',
+        color: 'white',
         border: 'black solid 1px',
         x: 250,
         y: 70,
@@ -111,7 +111,7 @@ function addLine() {
         txt: 'Write your text here',
         size: 40,
         align: 'left',
-        color: 'green',
+        color: 'white',
         x: 250,
         y: 500,
         draggable: true
@@ -122,7 +122,6 @@ function addLine() {
     var elInput = document.querySelector('.meme-input');
     elInput.value = '';
     elInput.focus();
-
 }
 
 

@@ -189,7 +189,8 @@ input {
 
 .card {
     cursor: pointer;
-    height: 278px;
+    height: 350px;
+    width: 350px;
     background-color: teal;
 }
 
@@ -265,22 +266,49 @@ i {
     margin-bottom: 20px;
 }
 
+.mostache {
+    width: 50px;
+}
+
 .footer-p {
     color: white;
     margin: 0;
 }
 
 @media (max-width:1150px) {
+    canvas {
+        max-width: 520px;
+    }
+    .meme-functions {
+        max-width: 520px;
+    }
+    .card {
+        height: 250px;
+        width: 250px;
+    }
+    .mostache {
+        width: 50px;
+    }
     .sec-nav {
+        /* max-width: 520px; */
         flex-direction: column;
         margin-top: 12px;
+    }
+    .remove {
+        display: none;
     }
     .main-header {
         width: 100%;
     }
-    .sec-nav {
-        max-width: 520px;
+    .editor-container {
+        flex-direction: column;
     }
+    .main-container-editor {
+        flex-direction: column;
+    }
+    /* .sec-nav {
+        max-width: 520px;
+    } */
     .sec-nav-btn {
         padding: 15px 15px
     }
@@ -292,7 +320,7 @@ i {
     }
     .remove {
         padding: 0;
-        display: none;
+        /* display: none; */
     }
     .info-container {
         flex-direction: column;
@@ -360,6 +388,7 @@ i {
     }
     .card {
         height: 160px;
+        width: 160px;
     }
     .comics {
         font-size: 30px;
@@ -376,7 +405,13 @@ i {
     .sec-nav-btn {
         padding: 20px 11px 17px 11px;
     }
+    /* .nav-bar-container {
+        justify-content: space-around;
+    } */
     .hamburger {
+        right: 20px;
+        top: 10px;
+        position: absolute;
         visibility: visible;
         z-index: 3;
     }
@@ -403,7 +438,7 @@ i {
         width: 100%;
         background-color: #ff7f00;
         padding: 0;
-        transform: translateY(0);
+        transform: translateY(-40px);
         transition: transform 0.5s;
         z-index: 0;
     }
@@ -412,7 +447,8 @@ i {
         transform: translateY(40px);
     }
     .nav-bar li a {
-        transition: color .2s ease;
+        transition: color .1s ease-in;
+        opacity: unset;
         color: transparent;
         padding: 0;
     }
@@ -502,7 +538,7 @@ i {
 }
 
 .meme-input {
-    width: 373px;
+    width: 100%;
     height: 60px;
     border-radius: 12px;
     background-color: #ffffff;
@@ -534,7 +570,7 @@ i {
     grid-row: 3/5;
 }
 
-.remove {
+.trash {
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row: 3/5;
@@ -576,8 +612,8 @@ i {
 }
 
 .select {
-    width: 218px;
-    height: 60px;
+    /* width: 218px;
+    height: 60px; */
     border-radius: 12px;
     background-color: #ffffff;
     grid-column-start: 1;
@@ -601,12 +637,10 @@ i {
 }
 
 .costumes {
-    width: 373px;
-    /* height: 135px; */
     border-radius: 12px;
     background-color: #ffffff;
     grid-column-start: 1;
-    grid-column-end: 7;
+    grid-column-end: -1;
     grid-row-start: 11;
     grid-row-end: 14;
 }
@@ -623,8 +657,8 @@ i {
     color: white;
     border-radius: 12px;
     background-color: #ff7f00;
-    grid-column-start: 4;
-    grid-column-end: 6;
+    grid-column-start: 5;
+    grid-column-end: -1;
     grid-row-start: 15;
     grid-row-end: 17;
     cursor: pointer;
@@ -639,8 +673,8 @@ i {
     color: white;
     border-radius: 12px;
     background-color: #ff7f00;
-    grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 5;
     grid-row-start: 15;
     grid-row-end: 17;
 }
@@ -649,6 +683,54 @@ i {
     .main-container {
         flex-direction: column;
     }
+    .editor-container {
+        flex-direction: column;
+    }
+    .main-container-editor {
+        flex-direction: column;
+    }
+    canvas {
+        max-width: 350px;
+    }
+    .meme-input {
+        width: 280px;
+        height: 39px;
+    }
+    .meme-functions {
+        margin: 5px;
+        grid-template-columns: repeat(6, 45px);
+        grid-template-rows: repeat(17, 19px);
+        grid-row-gap: 5px;
+        grid-column-gap: 5px;
+    }
+    .costume-type {
+        width: 35px;
+    }
+    .mostache {
+        width: 35px;
+    }
+    .btn-pic {
+        width: 27px;
+        height: 23px;
+    }
+    .save-meme {
+        width: 120px;
+        height: 40px;
+        border: none;
+        color: white;
+        border-radius: 12px;
+        background-color: #ff7f00;
+        display: none;
+    }
+    .download {
+        display: none;
+    }
+    .share {
+        grid-column: 2;
+        grid-column-end: 4;
+        grid-row-start: 14;
+        grid-row-end: 16;
+    }
 }
 
 .saved-memes {
@@ -656,6 +738,19 @@ i {
     height: 100vh;
     background-color: #e3e3e3;
     color: #040a2c;
+}
+
+.save-meme {
+    border: none;
+    width: 120px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: #ff7f00;
+    color: #ffff;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 15;
+    grid-row-end: 17;
 }
 
 .saved-memes p {
