@@ -50,10 +50,10 @@
                         <li class="sec-nav-btn">
                             <a class="dogs" href="#">dogs</a>
                         </li>
-                        <li class="sec-nav-btn remove">
+                        <li class="sec-nav-btn remove-sec-nav-btn">
                             <a class="drinks" href="#">drinks</a>
                         </li>
-                        <li class="sec-nav-btn remove">
+                        <li class="sec-nav-btn remove-sec-nav-btn">
                             <a class="books" href="#">books</a>
                         </li>
                         <li class="sec-nav-btn">
@@ -73,7 +73,7 @@
                 <img class="alina" src="LOGO/alina-kovalchuk-Cd7dYdJKIKk-unsplash.png" alt="">
             </div>
             <div class="gen-info">
-                <h3 class="h3">Nice alina</h3>
+                <h3 class="h3">Monika Geller</h3>
                 <p class="alina-text">is a fictional character,one of the six main characters who appears on the American sitcon Friends
                 </p>
                 <div>
@@ -100,75 +100,84 @@
                     <input oninput="onChangeTxt()" class="meme-input" type="text" placeholder="Write your text here">
                     <button onfocus="onSwitchInput()" class="up-down btn">
                    <img class="btn-pic" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
-               </button>
+                 </button>
                     <button onclick="onTextPosition(-5)" class="txt-up btn">
                         <i class="fas fa-arrow-up"></i>
-               </button>
+                 </button>
                     <button onclick="onTextPosition(5)" class="txt-down btn">
                         <i class="fas fa-arrow-down"></i>
-               </button>
+                 </button>
                     <button onclick="onAddLine()" class="add btn">
                    <img class="btn-pic" src="icons/add.png" alt="">
-               </button>
-                    <button class="trash btn">
+                 </button>
+                    <button onclick="onRemoveLine()" class="trash btn">
                    <img class="btn-pic" src="icons/trash.png" alt="">
-               </button>
+                 </button>
                     <button onclick="onIncreaseDecrease(10)" class="A-plus btn">
-                <img class="btn-pic" src="icons/A+.png" alt="">
-             </button>
+                 <img class="btn-pic" src="icons/A+.png" alt="">
+                 </button>
                     </button>
                     <button onclick="onIncreaseDecrease(-10)" class="A-minus btn">
-                <img class="btn-pic" src="icons/A-.png" alt="">
-             </button>
+                   <img class="btn-pic" src="icons/A-.png" alt="">
+                 </button>
                     </button>
-                    <button class="rtl btn">
-                <img class="btn-pic" src="icons/align-to-left.png" alt="">
-             </button>
+                    <button onclick="onChangeDirectionLTR()" class="rtl btn">
+                  <img class="btn-pic" src="icons/align-to-left.png" alt="">
+                   </button>
                     </button>
-                    <button class="btu btn">
+                    <button onclick="onChangeDirectionCTR()" class="btu btn">
                         <img class="btn-pic" src="icons/center-text-alignment.png" alt="">
                     </button>
-                    <button class="ltr btn">
+                    <button onclick="onChangeDirectionRTL()" class="ltr btn">
                             <img class="btn-pic" src="icons/align-to-right.png" alt="">
                          </button>
-                    <select class="select" name="name" id="word">
-                <option value="itamar">itamar</option>
-                <option value="didi">didi</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                    <select oninput="onChangeFontFamily()" class="select" name="name" id="word">
+                <option  value="monster">Monster</option>
+                <option value="lato">Lato</option>
+                <option value="Arial">Arial</option>
+                <option value="david">David</option>
               </select>
-                    <button class="A-font btn">
-                <img class="btn-pic" src="icons/A.png" alt="">
+                    <button onclick="onChangeBorder()" class="A-font btn">
+                        <input class="color-border-input" type="color" id="color" name="border-color" form="frmRegister" value="#ffffff"/>
+                        <img class="btn-pic" src="icons/A.png" alt="">
              </button>
-                    <button class="paint btn">
-                        <!-- <input type="color" src="icons/paint-board-and-brush.png"> -->
-                <img class="btn-pic" src="icons/paint-board-and-brush.png" alt="">
+                    <button onclick="onChangeTextColor()" class="paint btn">
+                        <input class="color-input" type="color" id="color" name="color" form="frmRegister" value="#ffffff" />
+                <img class="paint-pic btn-pic" src="icons/paint-board-and-brush.png" alt="">
             </button>
                     <section class="costumes flex space-between items-center">
                         <div class="costume-acc">
                             <img src="icons/left-arrow-costumes.jpg" alt="">
                         </div>
-                        <div onclick="onUseCostume()" class="costume-acc">
-                            <img onclick="onUseCostume()" class="costume-type" src="icons/present.jpg" alt="">
+                        <div class="costume-acc">
+                            <img onclick="onAddToArray(this)" class="costume-type" src="icons/present.jpg" alt="">
                         </div>
-                        <div onclick="onUseCostume()" class=" costume-acc ">
-                            <img class="costume-type" src="icons//nice-hat.png " alt=" ">
+                        <div class=" costume-acc ">
+                            <img onclick="onAddToArray(this)" class="costume-type" src="icons//nice-hat.png " alt=" ">
                         </div>
-                        <div onclick="onUseCostume()" class="costume-acc">
-                            <img class="costume-type" src="icons/glasses.jpg" alt="">
+                        <div class="costume-acc">
+                            <img onclick="onAddToArray(this)" class="costume-type" src="icons/glasses.jpg" alt="">
                         </div>
-                        <div onclick="onUseCostume()" class="costume-acc">
-                            <img class="mostache costume-type" src="icons/mostache.jpg" alt="">
+                        <div class="costume-acc">
+                            <img onclick="onAddToArray(this)" class="mostache costume-type" src="icons/mostache.jpg" alt="">
                         </div>
                         <div class=" costume-acc ">
                             <img src="icons/right-arrow-costumes.jpg " alt=" ">
                         </div>
                     </section>
-
+                    <div class="share-modal remove flex">
+                        <button class="x-modal-btn" onclick="toggleModal()">X</button>
+                        <a onclick="downloadImg(this)" download="meme.png" class="download" href="#">Download</a>
+                        <form class="form-share flex" action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                            <button class="share btn share-btn" type="submit">Share</button>
+                            <div class="share-container  space-between flex"></div>
+                        </form>
+                    </div>
                     <button onclick="onSaveMeme() " class="save-meme">Save</button>
-                    <button class="download ">Download</button>
-                    <button class="share ">Share</button>
+                    <button onclick="toggleModal()" class="share btn share-btn" type="submit">Share/Download</button>
                 </div>
+                <input class="img-from-user" type="file" name="image" onchange="onImgInput(event)" />
+
             </section>
         </section>
     </div>
