@@ -191,7 +191,11 @@ input {
     cursor: pointer;
     height: 350px;
     width: 350px;
-    background-color: teal;
+    transition: .3s;
+}
+
+.card:hover {
+    opacity: 0.8;
 }
 
 .info-container {
@@ -397,6 +401,14 @@ i {
     background-color: white;
 }
 
+.save-meme:hover {
+    background-color: lightblue;
+}
+
+.download:hover {
+    background-color: lightblue;
+}
+
 @media (max-width:520px) {
     .cards-container {
         max-width: 330px;
@@ -512,6 +524,11 @@ i {
     border-radius: 10px;
     background-color: white;
     cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-color: lightblue;
 }
 
 .meme-btns {
@@ -653,6 +670,7 @@ i {
 }
 
 .download {
+    transition: .3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -705,6 +723,7 @@ i {
         height: 23px;
     }
     .save-meme {
+        cursor: pointer;
         width: 120px;
         height: 40px;
         border: none;
@@ -757,6 +776,8 @@ i {
 }
 
 .save-meme {
+    cursor: pointer;
+    transition: .3s;
     border: none;
     width: 120px;
     height: 60px;
@@ -793,9 +814,10 @@ i {
     grid-row-end: 17;
 }
 
-.share {
+
+/* .share {
     margin: 10px;
-}
+} */
 
 .share-container {
     align-content: center;

@@ -54,7 +54,6 @@ function drawTxt(text, x, y, idx) {
     gCtx.textAlign = gMeme.lines[idx].align;
     gCtx.color = gMeme.lines[idx].color;
     gCtx.strokeStyle = gMeme.lines[idx].borderColor
-        // gCtx.stroke()
     gCtx.fillText(text, x, y);
     gCtx.strokeText(text, x, y);
 }
