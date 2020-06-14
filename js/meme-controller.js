@@ -8,7 +8,10 @@ var gMeme = getMemes()
 var gKeyword = getKeywords()
 var gCanvas;
 var gCtx;
-var picId;
+var gPicId;
+var isDraggeble = false;
+var gSelectedLineIdx = gMeme.selectedLineIdx;
+
 
 
 function init() {
@@ -31,16 +34,14 @@ function renderImg() {
 function drawImgFromlocal() {
     var img = new Image()
     if (!userImageSrc) {
-        img.src = `./meme-imgs (square)/${picId}.jpg`;
+        img.src = `./meme-imgs (square)/${gPicId}.jpg`;
     } else {
         img.src = userImageSrc.src
-        gCanvas.style.width = '650'
-        gCanvas.style.height = '650'
     }
 
     img.onload = () => {
         gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)
-        gCtx.drawImage(img, 10, 10, gCanvas.width, gCanvas.height) //img,x,y,xend,yend
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height) //img,x,y,xend,yend
         for (var i = 0; i < gMeme.lines.length; i++) {
             drawTxt(gMeme.lines[i].txt, gMeme.lines[i].x, gMeme.lines[i].y, i)
             if (gCostumes.length > 0) {
@@ -51,9 +52,8 @@ function drawImgFromlocal() {
 }
 
 function renderUserInputImg(img) {
-    gCanvas.width = img.width;
-    gCanvas.height = img.height;
-    gCtx.drawImage(img, 0, 0);
+
+    gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
 }
 
 function mapImgs() {
@@ -73,6 +73,12 @@ function onDrawTxt(text, x, y, idx) {
 
 function onFindPic(pic) {
     findPic(pic)
+}
+
+
+function onShowDiff(elValue) {
+    var elDiffText = document.querySelector('.show-diff')
+    elDiffText.innerText = elValue
 }
 
 function onIncreaseDecrease(diff) {
@@ -170,18 +176,6 @@ function onCanvasClicked(ev) {
     canvasClicked(ev)
 }
 
-function onMouseDown(ev) {
-    mouseDown(ev)
-}
-
-function onMouseUp(ev) {
-
-    mouseUp(ev)
-}
-
-function onMouseMove(ev) {
-    mouseMove(ev)
-}
 
 function onAddToArray(img) {
     addToArray(img)
@@ -206,9 +200,9 @@ function uploadImg(elForm, ev) {
 
         var shareContainer = document.querySelector('.share-container')
         shareContainer.innerHTML = `
-
+        
         <a class="download share-link" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
-           Share 
+        Share 
         </a>`
         var shareBtn = document.querySelector('.share-btn');
         shareBtn.style.display = 'none'
@@ -265,10 +259,10 @@ function onRemoveLine() {
 }
 
 function onImgInput(ev) {
-    loadImageFromInput(ev, renderUserInputImg)
+    onloadImageFromInput(ev, renderUserInputImg)
 }
 
-function loadImageFromInput(ev, onImageReady) {
+function onloadImageFromInput(ev, onImageReady) {
     document.querySelector('.share-container').innerHTML = ''
     var reader = new FileReader();
 
@@ -293,5 +287,68 @@ function onChangeFontFamily() {
     var selectedFontFamily = document.querySelector('.select').value;
     gMeme.lines[idx].fontFamily = selectedFontFamily
     console.log(gMeme.lines[idx].fontFamily);
+}
+var gClickedLine;
+
+function canvasClicked(ev) {
+    const { offsetX, offsetY } = ev;
+    gClickedLine = getLine(offsetX, offsetY);
+
+    // console.log(gClickedLine);
+
+    // var clickedLineIdx = gMeme.lines.findIndex(line => {
+    //         let startX = line.x;
+    //         let startY = line.y;
+    //         let endX = startX + (gCtx.measureText(line.txt).width);
+    //         let endY = startY - line.size;
+    //         // console.log(startX, startY, endX, endY, xEvent, yEvent);
+    //         return (xEvent >= startX && xEvent <= endX && yEvent <= startY && yEvent >= endY);
+    //     })
+    // console.log(clickedLine);
+    // gSelectedLineIdx = clickedLineIdx
+    switchInput()
+}
+var gSelectedLine;
+
+function getLine(offsetX, offsetY) {
+
+    var clickedLine = gMeme.lines.find(line => {
+        var textLength = gCtx.measureText(line.txt).width;
+        let startX = line.x - (textLength / 2);
+        let startY = line.y - line.size;
+        let endX = startX + textLength;
+        let endY = line.y;
+        // console.log('startx', startX, 'starty', startY, 'endx', endX, 'endy', endY, 'x', x, 'y', y);
+        return (offsetX >= startX && offsetX <= endX && offsetY >= startY && offsetY <= endY);
+    })
+
+    return clickedLine
+}
+
+
+function onMouseDown(ev) {
+    // var { offsetX, offsetY } = ev;
+    // if (gClickedLine) {
+
+    // }
+
+}
+
+function onMouseMove(ev) {
+    // var { offsetX, offsetY } = ev;
+    // gClickedLine.x = offsetX
+    // gClickedLine.y = offsetY
+    // drawImgFromlocal()
+}
+
+function onMouseUp(ev) {
+    // isDraggeble = false
+    // var { offsetX, offsetY } = ev;
+
+    // gClickedLine.x = offsetX
+    // gClickedLine.y = offsetY
+
+    // drawImgFromlocal()
+
 
 }

@@ -6,14 +6,23 @@ var gImgs = [{
         keywords: [
             'happy',
             'trump',
-            'angry'
+            'angry',
+            'politic',
+            'president',
+            'old',
+            'funny'
         ]
     }, {
         id: 2,
         url: './meme-imgs (square)/2.jpg',
         keywords: [
             'happy',
-            'dog'
+            'dog',
+            'funny',
+            'awsome',
+            'dogs',
+            'animal',
+            'animals'
         ]
     }, {
         id: 3,
@@ -22,7 +31,9 @@ var gImgs = [{
             'happy',
             'baby',
             'white',
-            'sleep'
+            'sleep',
+            'cute',
+            'dog'
         ]
     }, {
         id: 4,
@@ -31,7 +42,11 @@ var gImgs = [{
             'happy',
             'cat',
             'sleep',
-            'keyboard'
+            'keyboard',
+            'animal',
+            'cute',
+            'simba'
+
         ]
     },
     {
@@ -41,7 +56,8 @@ var gImgs = [{
             'happy',
             'baby',
             'sea',
-            'angry'
+            'angry',
+            'cute',
         ]
     },
     {
@@ -50,7 +66,7 @@ var gImgs = [{
         keywords: [
             'happy',
             'wierdo',
-            'nice hair'
+            'nice hair',
         ]
     },
     {
@@ -58,56 +74,80 @@ var gImgs = [{
         url: './meme-imgs (square)/7.jpg',
         keywords: [
             'happy',
-            'nigga madafaka'
+            'nigga madafaka',
+            'baby',
+            'cute'
         ]
     },
     {
         id: 8,
         url: './meme-imgs (square)/8.jpg',
         keywords: [
-            'happy'
+            'happy',
+            'hat',
+            'blonde',
+            'funny',
+            'tie'
         ]
     },
     {
         id: 9,
         url: './meme-imgs (square)/9.jpg',
         keywords: [
-            'happy'
+            'happy',
+            'baby',
+            'funny',
+            'criminal'
         ]
     },
     {
         id: 10,
         url: './meme-imgs (square)/10.jpg',
         keywords: [
-            'happy'
+            'happy',
+            'politic',
+            'obama',
+            'funny'
         ]
     },
     {
         id: 11,
         url: './meme-imgs (square)/11.jpg',
         keywords: [
-            'happy'
+            'happy',
+            'kiss',
+            'sport',
+            'champ'
         ]
     },
     {
         id: 12,
         url: './meme-imgs (square)/12.jpg',
         keywords: [
-            'happy'
+            'happy',
+            'haim hecht',
+            'What would you do?',
+            'glasses',
+            'old'
         ]
     },
     {
         id: 13,
         url: './meme-imgs (square)/13.jpg',
         keywords: [
-            'happy'
+            'happy',
+            'cheers',
+            'famouse',
+            'actor'
         ]
     },
     {
         id: 14,
         url: './meme-imgs (square)/14.jpg',
         keywords: [
-            'happy'
+            'happy',
+            'angry',
+            'glasses',
         ]
     },
     {

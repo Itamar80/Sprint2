@@ -113,13 +113,17 @@
                     <button onclick="onRemoveLine()" class="trash btn">
                    <img class="btn-pic" src="icons/trash.png" alt="">
                  </button>
-                    <button onclick="onIncreaseDecrease(10)" class="A-plus btn">
+                    <div class="diff-reciver flex">
+                        <input type="range" class="diff" name="diff" min="1" max="80" value="40" oninput="onIncreaseDecrease(this.value)" onchange="onShowDiff(this.value)">
+                        <span class="show-diff">40</span>
+                    </div>
+                    <!-- <button onclick="onIncreaseDecrease()" class="A-plus btn">
                  <img class="btn-pic" src="icons/A+.png" alt="">
                  </button>
                     </button>
-                    <button onclick="onIncreaseDecrease(-10)" class="A-minus btn">
+                    <button onclick="onIncreaseDecrease()" class="A-minus btn">
                    <img class="btn-pic" src="icons/A-.png" alt="">
-                 </button>
+                 </button> -->
                     </button>
                     <button onclick="onChangeDirectionLTR()" class="rtl btn">
                   <img class="btn-pic" src="icons/align-to-left.png" alt="">
@@ -133,16 +137,16 @@
                          </button>
                     <select oninput="onChangeFontFamily()" class="select" name="name" id="word">
                 <option  value="monster">Monster</option>
-                <option value="lato">Lato</option>
+                <option value="Cambria">Cambria</option>
                 <option value="Arial">Arial</option>
-                <option value="david">David</option>
+                <option value="Verdana">Verdana</option>
               </select>
-                    <button onclick="onChangeBorder()" class="A-font btn">
-                        <input class="color-border-input" type="color" id="color" name="border-color" form="frmRegister" value="#ffffff"/>
+                    <button class="A-font btn">
+                        <input oninput="onChangeBorder()" class="color-border-input" type="color" id="color" name="border-color" form="frmRegister" value="#ffffff"/>
                         <img class="btn-pic" src="icons/A.png" alt="">
              </button>
-                    <button onclick="onChangeTextColor()" class="paint btn">
-                        <input class="color-input" type="color" id="color" name="color" form="frmRegister" value="#ffffff" />
+                    <button class="paint btn">
+                        <input oninput="onChangeTextColor()" class="color-input" type="color" id="color" name="color" form="frmRegister" value="#ffffff" />
                 <img class="paint-pic btn-pic" src="icons/paint-board-and-brush.png" alt="">
             </button>
                     <section class="costumes flex space-between items-center">
@@ -174,7 +178,7 @@
                         </form>
                     </div>
                     <button onclick="onSaveMeme() " class="save-meme">Save</button>
-                    <button onclick="toggleModal()" class="share btn share-btn" type="submit">Share/Download</button>
+                    <button onclick="toggleModal()" class="share btn share-btn" type="submit">Share</button>
                 </div>
                 <input class="img-from-user" type="file" name="image" onchange="onImgInput(event)" />
 

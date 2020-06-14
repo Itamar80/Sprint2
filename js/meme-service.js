@@ -16,8 +16,7 @@ var gMeme = {
         borderColor: 'blue',
         x: 330,
         y: 70,
-        draggable: true,
-        fontFamily: 'Arial'
+        fontFamily: 'impact'
     }]
 }
 var gCostumes = []
@@ -50,7 +49,7 @@ function getImgs() {
 
 function drawTxt(text, x, y, idx) {
     gCtx.fillStyle = gMeme.lines[idx].color;
-    gCtx.font = gMeme.lines[idx].size + 'px sans serif ' + gMeme.lines[idx].fontFamily;
+    gCtx.font = gMeme.lines[idx].size + 'px ' + gMeme.lines[idx].fontFamily;
     gCtx.textAlign = gMeme.lines[idx].align;
     gCtx.color = gMeme.lines[idx].color;
     gCtx.strokeStyle = gMeme.lines[idx].borderColor
@@ -85,14 +84,12 @@ function changeTxt() {
 }
 
 function findPic(pic) {
-    picId = pic.id;
+    gPicId = pic.id;
     drawImgFromlocal()
 }
 
 function increaseDecrease(diff) {
-
-    // if (gMeme.lines[idx - 1].type === 'line') {
-    gMeme.lines[idx].size += diff
+    gMeme.lines[idx].size = diff
 
     // }
     // if (gCostumes[idx - 1].type === 'costume') {
@@ -120,7 +117,6 @@ function addLine() {
         color: 'white',
         x: 250,
         y: 500,
-        draggable: true,
         type: 'line',
         borderColor: 'blue',
         fontFamily: 'monster'
@@ -177,50 +173,29 @@ function saveMeme(memeToDataUrl) {
 }
 
 
-function canvasClicked(ev) {
-    const { offsetX: xEvent, offsetY: yEvent } = ev;
-
-    var clickedLine = gMeme.lines.findIndex(line => {
-        let startX = line.x;
-        let startY = line.y;
-        let endX = startX + (gCtx.measureText(line.txt).width);
-        let endY = startY - line.size;
-        return (xEvent >= startX && xEvent <= endX && yEvent <= startY && yEvent >= endY);
-    })
-    switchInput()
-    return clickedLine
-}
-
-function moveLine(x, y) {
-    gCtx.beginPath();
-    gCtx.moveTo(x, y);
-    gCtx.stroke();
-    gCtx.closePath();
-}
-
-function mouseMove(ev) {
-    const { offsetX: x, offsetY: y } = ev;
-
-}
-
-function mouseDown(ev) {
-    const { offsetX: x, offsetY: y } = ev;
-
-}
-
-function mouseUp(ev) {
-    const { offsetX: x, offsetY: y } = ev;
-    moveLine(ev.offsetX, ev.offsetY)
 
 
-}
+
+
+// function mouseMove(ev) {
+//     const { offsetX: x, offsetY: y } = ev;
+
+// }
+
+// function mouseDown(x, y) {
+//     // console.log(x, y);
+//     canvasClicked(ev)
+// }
+
+// function mouseUp(x, y) {
+//     moveLine(x, y)
+// }
 
 function changeDirectionRTL() {
     gMeme.lines[idx].align = 'left'
     drawImgFromlocal()
     var elInput = document.querySelector('.meme-input');
     elInput.focus();
-
 }
 
 function changeDirectionLTR() {
@@ -235,8 +210,4 @@ function changeDirectionCTR() {
     drawImgFromlocal()
     var elInput = document.querySelector('.meme-input');
     elInput.focus();
-}
-
-function changeBorder() {
-
 }

@@ -270,10 +270,6 @@ i {
     margin-bottom: 20px;
 }
 
-.mostache {
-    width: 50px;
-}
-
 .footer-p {
     color: white;
     margin: 0;
@@ -282,6 +278,15 @@ i {
 .remove {
     padding: 0;
     display: none;
+}
+
+canvas {
+    margin: 10px
+}
+
+.mostache {
+    visibility: hidden;
+    width: 35px;
 }
 
 @media (max-width:1150px) {
@@ -294,9 +299,6 @@ i {
     .card {
         height: 250px;
         width: 250px;
-    }
-    .mostache {
-        width: 50px;
     }
     .sec-nav {
         /* max-width: 520px; */
@@ -407,6 +409,15 @@ i {
 
 .download:hover {
     background-color: lightblue;
+}
+
+.share-link {
+    text-align: center;
+    width: 120px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: #ff7f00;
+    color: white;
 }
 
 @media (max-width:520px) {
@@ -688,6 +699,18 @@ i {
     grid-row-end: 17;
 }
 
+.diff-reciver {
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+.diff {
+    width: 100px;
+}
+
 @media(max-width:500px) {
     .main-container {
         flex-direction: column;
@@ -716,7 +739,8 @@ i {
         width: 35px;
     }
     .mostache {
-        width: 35px;
+        visibility: visible;
+        width: 30px;
     }
     .btn-pic {
         width: 27px;
@@ -737,6 +761,9 @@ i {
         grid-column-end: 4;
         grid-row-start: 14;
         grid-row-end: 16;
+    }
+    .diff {
+        width: 70px;
     }
     .share-modal {
         width: 212px;
@@ -843,7 +870,8 @@ i {
 }
 
 .color-input {
-    width: 22px;
+    position: absolute;
+    opacity: 0;
 }
 
 .img-from-user {
@@ -851,7 +879,8 @@ i {
 }
 
 .color-border-input {
-    width: 22px;
+    position: absolute;
+    opacity: 0;
 }
 
 
